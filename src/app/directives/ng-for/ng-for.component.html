@@ -1,0 +1,100 @@
+<mat-card>
+  <mat-card-title>List Names</mat-card-title>
+  <mat-card-content>
+    <mat-selection-list #myNames>
+      <mat-list-option *ngFor="let name of names; let i = index" role="listitem"
+        >{{ i }}) {{ name }}</mat-list-option
+      >
+    </mat-selection-list>
+    <mat-card-footer>
+      <p>Options selected: {{ myNames.selectedOptions.selected.length }}</p>
+    </mat-card-footer>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>List Names and Cities</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <h3 matSubHeader>Names</h3>
+
+      <mat-list-item *ngFor="let name of names">
+        <mat-icon mat-list-icon>person</mat-icon>
+        <h4 matLine>{{ name }}</h4>
+      </mat-list-item>
+
+      <h3 matSubHeader>Cities</h3>
+
+      <mat-list-item *ngFor="let city of cities">
+        <mat-icon mat-list-icon>location_city</mat-icon>
+        <h4 matLine>{{ city.name }}</h4>
+        <h4 matLine>{{ city.state }}</h4>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>NgFor Form</mat-card-title>
+  <mat-card-content>
+    <section>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="First Name"
+          name="firstName"
+          [(ngModel)]="name"
+        />
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Address"
+          name="address"
+          [(ngModel)]="address"
+        />
+        <mat-icon matSuffix>home</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Phone" name="phone" [(ngModel)]="phone" />
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="City" [(ngModel)]="city" name="city">
+          <mat-option *ngFor="let city of cities" [value]="city.name">
+            {{ city.name }} - {{ city.state }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+  </mat-card-content>
+  <mat-card-actions class="actions-button">
+    <button mat-raised-button (click)="save()" color="primary">Save</button>
+    <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="clients.length > 0">
+  <mat-card-content>
+    <section>
+      <mat-list>
+        <h3 matHeader>Clients</h3>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let client of clients; let i = index">
+          <mat-icon matListIcon>person</mat-icon>
+          <h2 matLine>Name: {{ client.name }}</h2>
+          <h2 matLine>Address: {{ client.address }}</h2>
+          <h2 matLine>Phone: {{ client.phone }}</h2>
+          <h2 matLine>City: {{ client.city }}</h2>
+          <button mat-icon-button color="accent" (click)="delete(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </section>
+  </mat-card-content>
+</mat-card>

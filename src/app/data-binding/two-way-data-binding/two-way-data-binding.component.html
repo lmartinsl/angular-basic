@@ -1,0 +1,78 @@
+<section>
+  <mat-card>
+    <mat-card-title>Person</mat-card-title>
+    <mat-card-content>
+      <form>
+        <mat-form-field style="width: 100%">
+          <input
+            [(ngModel)]="name"
+            name="name"
+            matInput
+            placeholder="Enter your name"
+          />
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%">
+          <input
+            [(ngModel)]="lastName"
+            name="lastName"
+            matInput
+            placeholder="Enter your last name"
+          />
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>{{ name }}</p>
+      <p>{{ lastName }}</p>
+    </mat-card-actions>
+  </mat-card>
+</section>
+<br />
+<section>
+  <mat-card>
+    <mat-card-title>Client</mat-card-title>
+    <mat-card-content>
+      <form>
+        <mat-form-field style="width: 100%">
+          <input
+            [(ngModel)]="client.firstName"
+            name="firstName"
+            matInput
+            placeholder="Enter your First Name"
+          />
+        </mat-form-field>
+        <mat-form-field style="width: 100%">
+          <input
+            [(ngModel)]="client.lastName"
+            name="lastName"
+            matInput
+            placeholder="Enter your Last Name"
+          />
+        </mat-form-field>
+        <mat-form-field style="width: 100%">
+          <input
+            [(ngModel)]="client.address"
+            name="address"
+            matInput
+            placeholder="Address"
+          />
+        </mat-form-field>
+        <mat-form-field style="width: 100%">
+          <input
+            [(ngModel)]="client.age"
+            name="age"
+            matInput
+            placeholder="Age"
+          />
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>First Name: {{ client.firstName }}</p>
+      <p>Last Name: {{ client.lastName }}</p>
+      <p>Adress: {{ client.address }}</p>
+      <p>Age: {{ client.age }}</p>
+    </mat-card-actions>
+  </mat-card>
+</section>

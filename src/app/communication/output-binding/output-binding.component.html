@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-content>
+    <section>
+      <h1 style="display: flex; justify-content: center">Value: {{ value }}</h1>
+      <app-child-item (incBy)="inc($event)" [title]="title"></app-child-item>
+    </section>
+  </mat-card-content>
+  <mat-card-actions style="display: flex; justify-content: center">
+    <button mat-raised-button color="primary" (click)="alterateTitle()">
+      Change title
+    </button>
+  </mat-card-actions>
+</mat-card>

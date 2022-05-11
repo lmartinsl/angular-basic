@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title> Select </mat-card-title>
+  <mat-card-content>
+    Please, select one class:
+    <mat-form-field>
+      <mat-select
+        (selectionChange)="colorSelected($event)"
+        [(ngModel)]="myClass"
+        name="myClass"
+        placeholder="Choose the Class:"
+      >
+        <mat-option value="classe0">Class 0</mat-option>
+        <mat-option value="classe1">Class 1</mat-option>
+        <mat-option value="classe2">Class 2</mat-option>
+        <mat-option value="classe3">Class 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-footer>
+    <p>Result:</p>
+    <p [ngClass]="myClass">Test1:</p>
+    <p [ngClass]="currentColor">Test2:</p>
+    <p [ngClass]="{ classe0: true }">Test3:</p>
+  </mat-card-footer>
+</mat-card>

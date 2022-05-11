@@ -1,0 +1,10 @@
+.container {
+  margin: 10px;
+}
+
+.example-card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 500px;
+}

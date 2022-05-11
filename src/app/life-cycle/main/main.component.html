@@ -1,0 +1,57 @@
+<mat-card>
+  <mat-card-title> Clients </mat-card-title>
+  <mat-card-content>
+    <section>
+      <mat-form-field
+        class="form-field"
+        style="width: 400px; padding-right: 20px"
+      >
+        <input matInput placeholder="Name" [(ngModel)]="name" />
+      </mat-form-field>
+
+      <mat-form-field
+        class="form-field"
+        style="width: 100px; padding-right: 20px"
+      >
+        <input matInput placeholder="Age" [(ngModel)]="age" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Favorite Food" [(ngModel)]="food">
+          <mat-option *ngFor="let foodOption of foods" [value]="foodOption">
+            {{ foodOption }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-icon-button color="primary" (click)="save()">
+        <mat-icon>check</mat-icon>
+      </button>
+
+      <button mat-icon-button color="primary">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </section>
+
+    <section>
+      <mat-list>
+        <mat-list-item *ngFor="let c of clients">
+          <mat-icon mat-list-icon>person</mat-icon>
+          <p mat-line>
+            <app-lifecycle-child
+              [name]="c.name"
+              [age]="c.age"
+              [food]="c.food"
+            ></app-lifecycle-child>
+          </p>
+          <button mat-icon-button color="warn">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button color="primary">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </section>
+  </mat-card-content>
+</mat-card>

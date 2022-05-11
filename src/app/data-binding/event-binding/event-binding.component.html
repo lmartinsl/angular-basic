@@ -1,0 +1,69 @@
+<section>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+  <button mat-raised-button color="warn" (click)="inc()">
+    {{ buttonLabel }}
+  </button>
+</section>
+
+<br />
+
+<section style="display: flex; height: 50px">
+  <button mat-raised-button color="primary" [disabled]="!btnEnable">
+    Button 1
+  </button>
+  <button mat-raised-button color="warn" [disabled]="!btnEnable">
+    Button 2
+  </button>
+  <button mat-raised-button color="basic" (click)="disasbleAll()">
+    Disable All
+  </button>
+
+  <mat-progress-spinner
+    color="primary"
+    [mode]="spinnerMode"
+    [value]="valueSpinner"
+  >
+  </mat-progress-spinner>
+</section>
+
+<mat-divider></mat-divider>
+
+<section>
+  <p>
+    <mat-checkbox color="warn" (change)="cbChange($event)"
+      >Disable / Enable</mat-checkbox
+    >
+  </p>
+
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <mat-select
+        [disabled]="selectDisabled"
+        (selectionChange)="selectionChanged($event)"
+      >
+        <mat-option *ngFor="let food of foods" [value]="food">
+          {{ food }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+  <p>Selected Option: {{ optionSelected }}</p>
+</section>
+
+<mat-divider></mat-divider>
+
+<section>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      placeholder="First Name"
+      (input)="inputName = $event.target.value"
+      [value]="inputName"
+    />
+  </mat-form-field>
+
+  <p>Name: {{ inputName }}</p>
+</section>

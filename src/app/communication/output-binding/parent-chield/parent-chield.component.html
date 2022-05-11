@@ -1,0 +1,18 @@
+<div>
+  <button mat-button color="primary" (click)="timerWatch.start()">Start</button>
+  <button mat-button color="accent" (click)="timerWatch.stop()">Stop</button>
+  <button mat-button color="warn" (click)="timerWatch.clear()">Clear</button>
+  Variáveis de template
+</div>
+
+<div>
+  <button mat-button color="primary" (click)="start()">Start</button>
+  <button mat-button color="accent" (click)="stop()">Stop</button>
+  <button mat-button color="warn" (click)="clear()">Clear</button>
+  <span>@ViewChild</span>
+</div>
+
+<app-timer #timerWatch></app-timer>
+<app-timer #timerWatchTwo></app-timer>
+
+<p #myP>Hi</p>
