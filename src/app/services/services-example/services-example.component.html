@@ -1,0 +1,20 @@
+<section style="display: flex; justify-content: space-around">
+  <div style="display: flex; flex-direction: column">
+    <mat-slide-toggle #toggle1>Component1</mat-slide-toggle>
+    <mat-slide-toggle #toggle2>Component2</mat-slide-toggle>
+  </div>
+  <div style="display: flex; flex-direction: column">
+    <mat-slide-toggle #toggle3>Component3</mat-slide-toggle>
+    <mat-slide-toggle #toggle4>Component4</mat-slide-toggle>
+  </div>
+</section>
+<section style="margin: 20px; display: flex; justify-content: space-around">
+  <div style="display: flex; flex-direction: column">
+    <app-component1 *ngIf="toggle1.checked"></app-component1>
+    <app-component2 *ngIf="toggle2.checked"></app-component2>
+  </div>
+  <div style="display: flex; flex-direction: column">
+    <app-component3 *ngIf="toggle3.checked"></app-component3>
+    <app-component4 *ngIf="toggle4.checked"></app-component4>
+  </div>
+</section>

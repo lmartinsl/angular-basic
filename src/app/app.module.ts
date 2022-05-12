@@ -1,3 +1,5 @@
+import { Module2Module } from './services/module2/module2.module';
+import { Module1Module } from './services/module1/module1.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -43,6 +45,8 @@ import { MainComponent } from './life-cycle/main/main.component';
 import { LifecycleChildComponent } from './life-cycle/main/lifecycle-child/lifecycle-child.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { ChildChildComponent } from './life-cycle/main/lifecycle-child/child-child/child-child.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ServicesExampleComponent } from './services/services-example/services-example.component';
 
 const materialsModules = [
   MatCardModule,
@@ -56,7 +60,8 @@ const materialsModules = [
   MatListModule,
   MatIconModule,
   MatProgressBarModule,
-  MatChipsModule
+  MatChipsModule,
+  MatSlideToggleModule
 ]
 
 @NgModule({
@@ -87,13 +92,16 @@ const materialsModules = [
     NameComponent,
     MainComponent,
     LifecycleChildComponent,
-    ChildChildComponent
+    ChildChildComponent,
+    ServicesExampleComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ...materialsModules,
-    FormsModule
+    FormsModule,
+    Module1Module,
+    Module2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
