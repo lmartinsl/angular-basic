@@ -41,6 +41,8 @@ import { InterceptingComponent } from './communication/intercepting/intercepting
 import { NameComponent } from './communication/intercepting/name/name.component';
 import { MainComponent } from './life-cycle/main/main.component';
 import { LifecycleChildComponent } from './life-cycle/main/lifecycle-child/lifecycle-child.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { ChildChildComponent } from './life-cycle/main/lifecycle-child/child-child/child-child.component';
 
 const materialsModules = [
   MatCardModule,
@@ -53,7 +55,8 @@ const materialsModules = [
   MatRadioModule,
   MatListModule,
   MatIconModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatChipsModule
 ]
 
 @NgModule({
@@ -83,7 +86,8 @@ const materialsModules = [
     InterceptingComponent,
     NameComponent,
     MainComponent,
-    LifecycleChildComponent
+    LifecycleChildComponent,
+    ChildChildComponent
   ],
   imports: [
     BrowserModule,

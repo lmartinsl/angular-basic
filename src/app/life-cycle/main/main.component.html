@@ -28,26 +28,41 @@
         <mat-icon>check</mat-icon>
       </button>
 
-      <button mat-icon-button color="primary">
+      <button mat-icon-button color="primary" (click)="generateRandom()">
         <mat-icon>refresh</mat-icon>
       </button>
     </section>
 
     <section>
       <mat-list>
-        <mat-list-item *ngFor="let c of clients">
+        <mat-list-item *ngFor="let c of clients; let i = index">
           <mat-icon mat-list-icon>person</mat-icon>
           <p mat-line>
             <app-lifecycle-child
+              #child
               [name]="c.name"
               [age]="c.age"
               [food]="c.food"
-            ></app-lifecycle-child>
+              ><strong>{{ random }}</strong>
+            </app-lifecycle-child>
           </p>
-          <button mat-icon-button color="warn">
+
+          <p mat-line>
+            <mat-chip-list>
+              <mat-chip
+                *ngFor="let event of child.events"
+                [color]="event.color"
+                selected
+              >
+                {{ event.name }}
+              </mat-chip>
+            </mat-chip-list>
+          </p>
+
+          <button mat-icon-button color="warn" (click)="remove(i)">
             <mat-icon>delete</mat-icon>
           </button>
-          <button mat-icon-button color="primary">
+          <button mat-icon-button color="primary" (click)="edit(i)">
             <mat-icon>edit</mat-icon>
           </button>
         </mat-list-item>
