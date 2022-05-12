@@ -1,3 +1,4 @@
+import { DepartmentService } from './../department.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,12 +10,19 @@ export class DepartmentComponent implements OnInit {
 
   public depName: string;
 
-  constructor() { }
+  constructor(private departmentService: DepartmentService) { }
 
   ngOnInit(): void {
   }
 
-  public save(): void { }
-  public clear(): void { }
+  public save(): void {
+    this.departmentService.addDepartments(
+      { name: this.depName }
+    )
+    this.clear();
+  }
+  public clear(): void {
+    this.depName = '';
+  }
 
 }

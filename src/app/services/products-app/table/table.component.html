@@ -1,1 +1,27 @@
-<p>table works!</p>
+<mat-card style="display: flex; justify-content: space-around; margin: 20px">
+  <table mat-table [dataSource]="products" style="width: 100%">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let p">{{ p.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let p">{{ p.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let p">{{ p.price }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let p">{{ p.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef>Department</th>
+      <td mat-cell *matCellDef="let p">{{ p.department.name }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="prodColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: prodColumns"></tr>
+  </table>
+</mat-card>

@@ -51,6 +51,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TableComponent } from './services/products-app/table/table.component';
 import { FormComponent } from './services/products-app/form/form.component';
 import { DepartmentComponent } from './services/products-app/department/department.component';
+import { MatTableModule } from '@angular/material/table';
 
 const materialsModules = [
   MatCardModule,
@@ -66,7 +67,8 @@ const materialsModules = [
   MatProgressBarModule,
   MatChipsModule,
   MatSlideToggleModule,
-  MatTabsModule
+  MatTabsModule,
+  MatTableModule
 ]
 
 @NgModule({
