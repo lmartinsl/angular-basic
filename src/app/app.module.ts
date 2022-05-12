@@ -47,6 +47,10 @@ import { MatChipsModule } from '@angular/material/chips';
 import { ChildChildComponent } from './life-cycle/main/lifecycle-child/child-child/child-child.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ServicesExampleComponent } from './services/services-example/services-example.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { TableComponent } from './services/products-app/table/table.component';
+import { FormComponent } from './services/products-app/form/form.component';
+import { DepartmentComponent } from './services/products-app/department/department.component';
 
 const materialsModules = [
   MatCardModule,
@@ -61,7 +65,8 @@ const materialsModules = [
   MatIconModule,
   MatProgressBarModule,
   MatChipsModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatTabsModule
 ]
 
 @NgModule({
@@ -93,7 +98,10 @@ const materialsModules = [
     MainComponent,
     LifecycleChildComponent,
     ChildChildComponent,
-    ServicesExampleComponent
+    ServicesExampleComponent,
+    TableComponent,
+    FormComponent,
+    DepartmentComponent
   ],
   imports: [
     BrowserModule,

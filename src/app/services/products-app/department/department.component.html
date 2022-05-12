@@ -1,0 +1,21 @@
+<mat-card style="display: flex; flex-direction: column">
+  <mat-card-title style="text-align: center">
+    <h4>New Department</h4>
+  </mat-card-title>
+  <mat-card-content style="display: flex; justify-content: center">
+    <div>
+      <mat-form-field style="width: 500px">
+        <input
+          matInput
+          placeholder="Department name"
+          [(ngModel)]="depName"
+          name="depName"
+        />
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions style="display: flex; justify-content: center">
+    <button mat-button color="primary" (click)="save()">Save</button>
+    <button mat-button color="accent" (click)="clear()">Clear</button>
+  </mat-card-actions>
+</mat-card>

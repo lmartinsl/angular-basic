@@ -1,4 +1,4 @@
-<section style="display: flex; justify-content: space-around">
+<!-- <section style="display: flex; justify-content: space-around">
   <div style="display: flex; flex-direction: column">
     <mat-slide-toggle #toggle1>Component1</mat-slide-toggle>
     <mat-slide-toggle #toggle2>Component2</mat-slide-toggle>
@@ -17,4 +17,18 @@
     <app-component3 *ngIf="toggle3.checked"></app-component3>
     <app-component4 *ngIf="toggle4.checked"></app-component4>
   </div>
-</section>
+</section> -->
+
+<!-- PRODUCTS APP -->
+
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="New Department">
+    <app-department></app-department>
+  </mat-tab>
+  <mat-tab label="New Product">
+    <app-form></app-form>
+  </mat-tab>
+  <mat-tab label="All Products">
+    <app-table></app-table>
+  </mat-tab>
+</mat-tab-group>
