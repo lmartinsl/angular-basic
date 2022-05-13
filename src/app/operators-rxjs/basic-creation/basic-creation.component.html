@@ -1,0 +1,26 @@
+<div
+  style="
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  "
+>
+  <button mat-raised-button color="primary" (click)="obsCreate()">
+    Create / Observable
+  </button>
+  <button mat-raised-button color="primary" (click)="fromClick()">From</button>
+  <button mat-raised-button color="primary" (click)="fromEventClick()">
+    From Event
+  </button>
+  <button mat-raised-button color="primary" (click)="ofClick()">Of</button>
+  <button mat-raised-button color="primary" (click)="intervalClick()">
+    Inteval
+  </button>
+  <button mat-raised-button color="primary" (click)="timerClick()">
+    Timer
+  </button>
+  <button mat-raised-button color="accent" (click)="unsubscribe()">
+    Unsubscribe
+  </button>
+</div>

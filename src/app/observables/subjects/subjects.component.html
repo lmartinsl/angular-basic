@@ -1,0 +1,18 @@
+<h3>Subjects</h3>
+<button mat-button color="primary" (click)="connect()">Connect</button>
+
+<div class="subjects-container">
+  <app-subjects-child name="Subject" [subject]="subject"></app-subjects-child>
+  <app-subjects-child
+    name="Replay Subject"
+    [subject]="replaySubject"
+  ></app-subjects-child>
+  <app-subjects-child
+    name="Async Subject"
+    [subject]="asyncSubject"
+  ></app-subjects-child>
+  <app-subjects-child
+    name="Behavior Subject"
+    [subject]="behaviorSubject"
+  ></app-subjects-child>
+</div>

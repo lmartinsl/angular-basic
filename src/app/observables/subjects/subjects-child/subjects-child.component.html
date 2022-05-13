@@ -1,0 +1,22 @@
+<div class="box">
+  <h4>{{ name }}</h4>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="connect()"
+    *ngIf="!connected"
+  >
+    Connect
+  </button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="disconnect()"
+    *ngIf="connected"
+  >
+    Disconnect
+  </button>
+  <div>
+    <p *ngFor="let el of log">{{ el }}</p>
+  </div>
+</div>

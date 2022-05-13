@@ -52,6 +52,12 @@ import { TableComponent } from './services/products-app/table/table.component';
 import { FormComponent } from './services/products-app/form/form.component';
 import { DepartmentComponent } from './services/products-app/department/department.component';
 import { MatTableModule } from '@angular/material/table';
+import { BasicComponent } from './observables/basic/basic.component';
+import { ColdObservablesComponent } from './observables/cold-observables/cold-observables.component';
+import { IntroComponent } from './observables/hot-observables/intro/intro.component';
+import { SubjectsComponent } from './observables/subjects/subjects.component';
+import { SubjectsChildComponent } from './observables/subjects/subjects-child/subjects-child.component';
+import { BasicCreationComponent } from './operators-rxjs/basic-creation/basic-creation.component';
 
 const materialsModules = [
   MatCardModule,
@@ -103,7 +109,13 @@ const materialsModules = [
     ServicesExampleComponent,
     TableComponent,
     FormComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    BasicComponent,
+    ColdObservablesComponent,
+    IntroComponent,
+    SubjectsComponent,
+    SubjectsChildComponent,
+    BasicCreationComponent
   ],
   imports: [
     BrowserModule,

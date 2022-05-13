@@ -1,4 +1,4 @@
-<div style="margin: 20px">
+<div style="padding: 30px">
   <!-- DATA BINDING -->
   <!-- <app-string-interpolation></app-string-interpolation> -->
   <!-- <app-property-binding></app-property-binding> -->
@@ -30,5 +30,57 @@
   <!-- ANGULAR LIFECYCLE -->
   <!-- <app-main></app-main> -->
   <!-- SERVICES -->
-  <app-services-examples></app-services-examples>
+  <!-- <app-services-examples></app-services-examples> -->
+  <!-- OBSERVABLES -->
+  <!-- <app-basic></app-basic> -->
+  <!-- <app-cold-observables></app-cold-observables> -->
+  <!-- <app-intro></app-intro> -->
+  <!-- <app-subjects></app-subjects> -->
+  <!-- OPERATORS RXJS -->
+  <div
+    style="
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 500px;
+      width: 100%;
+    "
+  >
+    <div style="width: 20%">
+      <mat-radio-group
+        style="display: flex; flex-direction: column; align-items: flex-start"
+        [(ngModel)]="option"
+      >
+        <mat-radio-button value="basic-creation">
+          Basic Creation
+        </mat-radio-button>
+        <mat-radio-button value="teste"> Teste </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div
+      style="
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      "
+    >
+      <ng-container [ngSwitch]="option">
+        <mat-card
+          style="
+            background-color: blanchedalmond;
+            width: 100%;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.397);
+          "
+          *ngIf="option"
+        >
+          <app-basic-creation
+            style="width: 100%"
+            *ngSwitchCase="'basic-creation'"
+          ></app-basic-creation>
+          <div *ngSwitchCase="'teste'">testeeeeeee</div>
+        </mat-card>
+      </ng-container>
+    </div>
+  </div>
 </div>

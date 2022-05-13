@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public name: string = 'Lucas';
   public person = { name: 'Larissa', age: '25', state: 'SP' }
+  public option: string;
 }

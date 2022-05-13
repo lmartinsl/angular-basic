@@ -1,0 +1,5 @@
+.subjects-container {
+  display: flex;
+  justify-content: space-between;
+  widows: 100%;
+}
