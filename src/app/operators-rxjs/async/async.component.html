@@ -1,0 +1,30 @@
+<div
+  style="
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  "
+>
+  <mat-card>
+    <mat-card-title>Select the options bellow</mat-card-title>
+    <mat-card-content>
+      <mat-selection-list>
+        <mat-list-option *ngFor="let o of options$ | async">{{
+          o
+        }}</mat-list-option>
+      </mat-selection-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <div *ngIf="users$ | async as u; else loadingUsers">
+        <p>Name: {{ u.name }}</p>
+        <p>Login: {{ u.login }}</p>
+      </div>
+
+      <ng-template #loadingUsers>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        <p>Loading...</p>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>
+</div>

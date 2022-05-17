@@ -1,0 +1,10 @@
+.rect {
+  height: 139px;
+  width: 361px;
+  background-color: cadetblue;
+  box-shadow: 2px 2px 2px black;
+  cursor:move;
+  position: absolute;
+  background-image: url('./../../../assets/hello.png');
+  background-repeat: no-repeat;
+}

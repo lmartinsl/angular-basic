@@ -1,0 +1,64 @@
+<div
+  style="
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  "
+>
+  <div style="display: flex; align-items: center; flex-direction: column">
+    <button mat-raised-button color="primary" (click)="mapClick()">Map</button>
+    <button mat-raised-button color="primary" (click)="filterClick()">
+      Filter
+    </button>
+    <button mat-raised-button color="primary" (click)="tapClick()">Tap</button>
+  </div>
+  <div style="display: flex; justify-content: space-between">
+    <button style="width: 60px" mat-fab color="warn" (click)="takeClick()">
+      take
+    </button>
+    <button style="width: 60px" mat-fab color="warn" (click)="firstClick()">
+      first
+    </button>
+    <button style="width: 60px" mat-fab color="warn" (click)="lastClick()">
+      last
+    </button>
+  </div>
+  <div style="display: flex; align-items: center; flex-direction: column">
+    <button mat-raised-button color="primary" (click)="debounceTimeClick()">
+      DebounceTime
+    </button>
+    <button mat-raised-button color="primary" (click)="takeWhile()">
+      Take While
+    </button>
+    <button mat-raised-button color="primary" (click)="takeUntil()">
+      Take Until
+    </button>
+    <button mat-raised-button color="primary" (click)="debounceTimeSearch()">
+      DebounceTime Search
+    </button>
+  </div>
+</div>
+
+<div
+  matRipple
+  matRippleCentered="true"
+  matRippleColor="rgb(240,166,166,0.4)"
+  matRippleRadius="40"
+  class="debounceArea"
+></div>
+
+<mat-divider></mat-divider>
+
+<mat-form-field>
+  <mat-label>Search by: </mat-label>
+  <input
+    matInput
+    placeholder="type something..."
+    autocomplete="off"
+    (keyup)="searchBy($event)"
+    [(ngModel)]="searchInput"
+  />
+</mat-form-field>
+<span>{{ textDebounce }}</span>

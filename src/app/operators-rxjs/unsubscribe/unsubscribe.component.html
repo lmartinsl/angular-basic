@@ -1,0 +1,30 @@
+<div
+  style="
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  "
+>
+  <div style="display: flex">
+    <button mat-raised-button color="warn" (click)="subscribe()">
+      Subscribe All
+    </button>
+    <mat-spinner
+      *ngIf="subscriptionsAreActive"
+      diameter="30"
+      color="warn"
+    ></mat-spinner>
+  </div>
+
+  <div>
+    <button
+      [disabled]="!subscriptionsAreActive"
+      mat-raised-button
+      color="primary"
+      (click)="unsubscribe()"
+    >
+      Unsubscribe All
+    </button>
+  </div>
+</div>

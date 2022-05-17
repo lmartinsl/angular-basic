@@ -58,6 +58,12 @@ import { IntroComponent } from './observables/hot-observables/intro/intro.compon
 import { SubjectsComponent } from './observables/subjects/subjects.component';
 import { SubjectsChildComponent } from './observables/subjects/subjects-child/subjects-child.component';
 import { BasicCreationComponent } from './operators-rxjs/basic-creation/basic-creation.component';
+import { OperatorsComponent } from './operators-rxjs/operators/operators.component';
+import { MatRippleModule } from '@angular/material/core';
+import { AsyncComponent } from './operators-rxjs/async/async.component';
+import { ErrorHandlingComponent } from './operators-rxjs/error-handling/error-handling.component';
+import { DragAndDropComponent } from './operators-rxjs/drag-and-drop/drag-and-drop.component';
+import { UnsubscribeComponent } from './operators-rxjs/unsubscribe/unsubscribe.component';
 
 const materialsModules = [
   MatCardModule,
@@ -74,7 +80,8 @@ const materialsModules = [
   MatChipsModule,
   MatSlideToggleModule,
   MatTabsModule,
-  MatTableModule
+  MatTableModule,
+  MatRippleModule
 ]
 
 @NgModule({
@@ -115,7 +122,12 @@ const materialsModules = [
     IntroComponent,
     SubjectsComponent,
     SubjectsChildComponent,
-    BasicCreationComponent
+    BasicCreationComponent,
+    OperatorsComponent,
+    AsyncComponent,
+    ErrorHandlingComponent,
+    DragAndDropComponent,
+    UnsubscribeComponent,
   ],
   imports: [
     BrowserModule,

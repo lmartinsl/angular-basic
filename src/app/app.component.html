@@ -42,7 +42,7 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height: 500px;
+      height: 700px;
       width: 100%;
     "
   >
@@ -54,7 +54,15 @@
         <mat-radio-button value="basic-creation">
           Basic Creation
         </mat-radio-button>
-        <mat-radio-button value="teste"> Teste </mat-radio-button>
+        <mat-radio-button value="operators"> Operators </mat-radio-button>
+        <mat-radio-button value="async"> Templates \ Async </mat-radio-button>
+        <mat-radio-button value="error-handling">
+          Error Handling
+        </mat-radio-button>
+        <mat-radio-button value="drag-and-drop">
+          Drag and Drop
+        </mat-radio-button>
+        <mat-radio-button value="unsubscribe"> Unsubscribe </mat-radio-button>
       </mat-radio-group>
     </div>
     <div
@@ -78,7 +86,21 @@
             style="width: 100%"
             *ngSwitchCase="'basic-creation'"
           ></app-basic-creation>
-          <div *ngSwitchCase="'teste'">testeeeeeee</div>
+          <app-operators style="width: 100%" *ngSwitchCase="'operators'">
+          </app-operators>
+          <app-async style="width: 100%" *ngSwitchCase="'async'"></app-async>
+          <app-error-handling
+            style="width: 100%"
+            *ngSwitchCase="'error-handling'"
+          ></app-error-handling>
+          <app-drag-and-drop
+            style="width: 100%"
+            *ngSwitchCase="'drag-and-drop'"
+          ></app-drag-and-drop>
+          <app-unsubscribe
+            style="width: 100%"
+            *ngSwitchCase="'unsubscribe'"
+          ></app-unsubscribe>
         </mat-card>
       </ng-container>
     </div>

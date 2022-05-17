@@ -1,0 +1,12 @@
+button {
+  width: 300px;
+  margin-bottom: 5px;
+}
+
+.debounceArea {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  width: 200px;
+  height: 200px;
+}
