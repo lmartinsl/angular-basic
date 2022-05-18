@@ -41,7 +41,7 @@
     style="
       display: flex;
       justify-content: space-around;
-      align-items: center;
+      align-items: baseline;
       height: 700px;
       width: 100%;
     "
@@ -62,6 +62,7 @@
         <mat-radio-button value="drag-and-drop">
           Drag and Drop
         </mat-radio-button>
+        <mat-radio-button value="switch-merge"> Switch Merge </mat-radio-button>
         <mat-radio-button value="unsubscribe"> Unsubscribe </mat-radio-button>
       </mat-radio-group>
     </div>
@@ -101,6 +102,10 @@
             style="width: 100%"
             *ngSwitchCase="'unsubscribe'"
           ></app-unsubscribe>
+          <app-switch-merge
+            style="width: 100%"
+            *ngSwitchCase="'switch-merge'"
+          ></app-switch-merge>
         </mat-card>
       </ng-container>
     </div>

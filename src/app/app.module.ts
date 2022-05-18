@@ -64,6 +64,8 @@ import { AsyncComponent } from './operators-rxjs/async/async.component';
 import { ErrorHandlingComponent } from './operators-rxjs/error-handling/error-handling.component';
 import { DragAndDropComponent } from './operators-rxjs/drag-and-drop/drag-and-drop.component';
 import { UnsubscribeComponent } from './operators-rxjs/unsubscribe/unsubscribe.component';
+import { SwitchMergeComponent } from './operators-rxjs/switch-merge/switch-merge.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const materialsModules = [
   MatCardModule,
@@ -128,6 +130,7 @@ const materialsModules = [
     ErrorHandlingComponent,
     DragAndDropComponent,
     UnsubscribeComponent,
+    SwitchMergeComponent,
   ],
   imports: [
     BrowserModule,
@@ -135,7 +138,8 @@ const materialsModules = [
     ...materialsModules,
     FormsModule,
     Module1Module,
-    Module2Module
+    Module2Module,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
