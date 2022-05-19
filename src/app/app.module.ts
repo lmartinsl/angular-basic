@@ -66,6 +66,11 @@ import { DragAndDropComponent } from './operators-rxjs/drag-and-drop/drag-and-dr
 import { UnsubscribeComponent } from './operators-rxjs/unsubscribe/unsubscribe.component';
 import { SwitchMergeComponent } from './operators-rxjs/switch-merge/switch-merge.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientComponent } from './http-client/client/client.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DialogEditComponent } from './http-client/dialog-edit/dialog-edit.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const materialsModules = [
   MatCardModule,
@@ -83,7 +88,10 @@ const materialsModules = [
   MatSlideToggleModule,
   MatTabsModule,
   MatTableModule,
-  MatRippleModule
+  MatRippleModule,
+  MatToolbarModule,
+  MatSnackBarModule,
+  MatDialogModule
 ]
 
 @NgModule({
@@ -131,6 +139,8 @@ const materialsModules = [
     DragAndDropComponent,
     UnsubscribeComponent,
     SwitchMergeComponent,
+    ClientComponent,
+    DialogEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Edit Product</h1>
+
+<div
+  mat-dialog-content
+  style="display: flex; flex-direction: column; justify-content: space-around"
+>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Product Name"
+      [(ngModel)]="product.name"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Department"
+      [(ngModel)]="product.department"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Price"
+      [(ngModel)]="product.price"
+      type="number"
+    />
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="product" cdkFocusInitial>Save</button>
+</div>

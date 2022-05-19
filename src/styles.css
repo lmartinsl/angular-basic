@@ -2,7 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-mat-divider {
-  margin-top: 5px;
-  margin-bottom: 5px;
+
+.snackOk {
+  background-color: darkseagreen;
+  color: darkgreen;
+}
+
+.snackError {
+  background-color: pink;
+  color: brown;
 }
