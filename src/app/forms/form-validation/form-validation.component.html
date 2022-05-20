@@ -1,0 +1,216 @@
+<div class="container">
+  <div class="body">
+    <mat-card class="info-card mat-elevation-z8">
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+
+      <mat-card-content class="content-card">
+        <form class="form" #formClient="ngForm" (ngSubmit)="onSubmit()">
+          <div>
+            <h4>Client:</h4>
+          </div>
+
+          <div class="div-form">
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="First Name"
+                [(ngModel)]="client.firstName"
+                name="firstName"
+                required
+                minlength="4"
+                #firstNameField="ngModel"
+              />
+              <mat-error *ngIf="firstNameField.errors?.required">
+                Enter the First Name
+              </mat-error>
+              <mat-error *ngIf="firstNameField.errors?.minlength">
+                First Name must be 4 or more characters
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Last Name"
+                [(ngModel)]="client.lastName"
+                name="lastName"
+                required
+                minlength="4"
+                #lastNameField="ngModel"
+              />
+              <mat-error *ngIf="lastNameField.errors?.required">
+                Enter the First Name
+              </mat-error>
+              <mat-error *ngIf="lastNameField.errors?.minlength">
+                Last Name must be 4 or more characters
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="div-form" style="justify-content: flex-start">
+            <mat-form-field style="width: 250px" appearance="fill">
+              <input
+                matInput
+                placeholder="Date of Birth"
+                [matDatepicker]="picker"
+                [(ngModel)]="client.birth"
+                name="birth"
+                required
+                #birth="ngModel"
+              />
+              <mat-error *ngIf="birth.errors?.required">
+                Enter the birth
+              </mat-error>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-radio-group
+              class="radio-group"
+              [(ngModel)]="client.gender"
+              name="gender"
+              style="margin-left: 20px"
+            >
+              <mat-radio-button value="Male" checked>Male</mat-radio-button>
+              <mat-radio-button value="Female">Female</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              class="form-control"
+              value=""
+              placeholder="Email"
+              [(ngModel)]="client.email"
+              name="email"
+              required
+              email
+              #email="ngModel"
+            />
+            <mat-error *ngIf="email.errors?.required">
+              Enter the email
+            </mat-error>
+            <mat-error *ngIf="email.errors?.email">
+              Enter the a valid email
+            </mat-error>
+          </mat-form-field>
+
+          <div>
+            <h4>Address:</h4>
+          </div>
+          <div class="info-footer">
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Street"
+                [(ngModel)]="client.street"
+                name="street"
+                required
+                #address="ngModel"
+              />
+              <mat-error *ngIf="address.errors?.required">
+                Enter the email
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="City"
+                [(ngModel)]="client.city"
+                name="city"
+                required
+                #city="ngModel"
+              />
+              <mat-error *ngIf="city.errors?.required">
+                Enter the email
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-select
+                placeholder="State"
+                [(ngModel)]="client.state"
+                name="state"
+                required
+                #state="ngModel"
+              >
+                <mat-option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="state.errors?.required">
+                Enter the state
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <h4>Telephones:</h4>
+          </div>
+
+          <div class="footer">
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Telephone 1 "
+                [(ngModel)]="client.phone1"
+                name="phone1"
+                required
+                #phone1="ngModel"
+              />
+              <mat-error *ngIf="phone1.errors?.required">
+                Enter the phone
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Telephone 2"
+                [(ngModel)]="client.phone2"
+                name="phone2"
+                required
+                #phone2="ngModel"
+              />
+              <mat-error *ngIf="phone2.errors?.required">
+                Enter the phone
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <button
+            [disabled]="formClient.invalid"
+            mat-button
+            color="primary"
+            type="submit"
+          >
+            <mat-icon>done</mat-icon>Submit
+          </button>
+        </form>
+      </mat-card-content>
+      <mat-card-footer> </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

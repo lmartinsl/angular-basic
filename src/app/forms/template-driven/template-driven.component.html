@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="body">
+    <mat-card class="info-card mat-elevation-z8">
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+
+      <mat-card-content class="content-card">
+        <form class="form" #formClient="ngForm" (ngSubmit)="onSubmit()">
+          <div>
+            <h4>Client:</h4>
+          </div>
+
+          <div class="div-form">
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="First Name"
+                [(ngModel)]="client.firstName"
+                name="firstName"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex="45">
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Last Name"
+                [(ngModel)]="client.lastName"
+                name="lastName"
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="div-form" style="justify-content: flex-start">
+            <mat-form-field style="width: 250px" appearance="fill">
+              <input
+                matInput
+                placeholder="Date of Birth"
+                [matDatepicker]="picker"
+                [(ngModel)]="client.birth"
+                name="birth"
+              />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-radio-group
+              class="radio-group"
+              [(ngModel)]="client.gender"
+              name="gender"
+            >
+              <mat-radio-button value="Male" checked>Male</mat-radio-button>
+              <mat-radio-button value="Female">Female</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div>
+            <h4>Address:</h4>
+          </div>
+          <div class="info-footer">
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Street"
+                [(ngModel)]="client.street"
+                name="street"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="City"
+                [(ngModel)]="client.city"
+                name="city"
+              />
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-select
+                placeholder="State"
+                [(ngModel)]="client.state"
+                name="state"
+              >
+                <mat-option *ngFor="let state of states" [value]="state">
+                  {{ state }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <h4>Telephones:</h4>
+          </div>
+
+          <div class="footer">
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Telephone 1 "
+                [(ngModel)]="client.phone1"
+                name="phone1"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                class="form-control"
+                value=""
+                placeholder="Telephone 2"
+                [(ngModel)]="client.phone2"
+                name="phone2"
+              />
+            </mat-form-field>
+          </div>
+
+          <button mat-button color="primary" type="submit">
+            <mat-icon>done</mat-icon>Submit
+          </button>
+        </form>
+      </mat-card-content>
+      <mat-card-footer> </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

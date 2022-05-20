@@ -1,0 +1,74 @@
+<div style="display: flex; flex-direction: column">
+  <div style="display: flex; align-items: center; justify-content: center">
+    <mat-card class="mat-elevation-z8" style="width: 800px">
+      <mat-card-title></mat-card-title>
+      <mat-card-subtitle> </mat-card-subtitle>
+
+      <mat-card-content
+        style="display: flex; flex-direction: column; align-items: stretch"
+      >
+        <form
+          (ngSubmit)="onSubmit()"
+          style="display: flex; flex-direction: column; align-items: stretch"
+          #formClient="ngForm"
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+            "
+          >
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                autocomplete="off"
+                [(ngModel)]="firstName"
+                name="firstName"
+                class="form-control"
+                value=""
+                placeholder="First Name"
+                #firstNameField="ngModel"
+                required
+                minlength="3"
+              />
+              <mat-hint
+                style="color: brown"
+                *ngIf="
+                  firstNameField.invalid &&
+                  (firstNameField.touched || firstNameField.dirty)
+                "
+              >
+                Enter a valid name
+              </mat-hint>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input
+                matInput
+                type="text"
+                autocomplete="off"
+                [(ngModel)]="lastName"
+                name="lastName"
+                class="form-control"
+                value=""
+                placeholder="Last Name"
+              />
+            </mat-form-field>
+          </div>
+
+          <button
+            [disabled]="formClient.invalid"
+            mat-button
+            color="primary"
+            type="submit"
+          >
+            <mat-icon>done</mat-icon>Submit
+          </button>
+        </form>
+      </mat-card-content>
+      <mat-card-footer> </mat-card-footer>
+    </mat-card>
+  </div>
+</div>

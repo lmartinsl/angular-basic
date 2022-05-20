@@ -1,0 +1,36 @@
+<mat-card class="mat-elevation-z8">
+  <mat-card-title>New Client</mat-card-title>
+  <mat-card-subtitle> </mat-card-subtitle>
+
+  <mat-card-content>
+    <div style="display: flex; justify-content: space-around">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          value=""
+          placeholder="First Name"
+          [formControl]="firstName"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          class="form-control"
+          value=""
+          placeholder="Last Name"
+          [formControl]="lastName"
+        />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-button color="primary" (click)="setFirstName()">
+        <mat-icon>done</mat-icon>Set New FirstName
+      </button>
+    </div>
+  </mat-card-content>
+  <mat-card-footer> </mat-card-footer>
+</mat-card>

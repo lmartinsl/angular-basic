@@ -17,7 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { TwoWayDataBindingComponent } from './data-binding/two-way-data-binding/two-way-data-binding.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgStyleComponent } from './directives/ng-style/ng-style.component'
 import { MatRadioModule } from '@angular/material/radio';
 import { NgClassComponent } from './directives/ng-class/ng-class.component';
@@ -59,7 +59,7 @@ import { SubjectsComponent } from './observables/subjects/subjects.component';
 import { SubjectsChildComponent } from './observables/subjects/subjects-child/subjects-child.component';
 import { BasicCreationComponent } from './operators-rxjs/basic-creation/basic-creation.component';
 import { OperatorsComponent } from './operators-rxjs/operators/operators.component';
-import { MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { AsyncComponent } from './operators-rxjs/async/async.component';
 import { ErrorHandlingComponent } from './operators-rxjs/error-handling/error-handling.component';
 import { DragAndDropComponent } from './operators-rxjs/drag-and-drop/drag-and-drop.component';
@@ -71,6 +71,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { DialogEditComponent } from './http-client/dialog-edit/dialog-edit.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FormNativeValidationComponent } from './forms/form-native-validation/form-native-validation.component';
+import { FormValidationComponent } from './forms/form-validation/form-validation.component';
+import { FormControlComponent } from './forms/form-control/form-control.component';
+import { FormGroupComponent } from './forms/form-group/form-group.component';
 
 const materialsModules = [
   MatCardModule,
@@ -91,7 +98,9 @@ const materialsModules = [
   MatRippleModule,
   MatToolbarModule,
   MatSnackBarModule,
-  MatDialogModule
+  MatDialogModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ]
 
 @NgModule({
@@ -141,17 +150,26 @@ const materialsModules = [
     SwitchMergeComponent,
     ClientComponent,
     DialogEditComponent,
+    FormsComponent,
+    TemplateDrivenComponent,
+    FormNativeValidationComponent,
+    FormValidationComponent,
+    FormControlComponent,
+    FormGroupComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ...materialsModules,
     FormsModule,
+    ReactiveFormsModule,
     Module1Module,
     Module2Module,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
