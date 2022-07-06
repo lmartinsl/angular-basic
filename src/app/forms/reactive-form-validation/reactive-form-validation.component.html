@@ -1,0 +1,144 @@
+<div style="display: flex; justify-content: center">
+  <mat-card class="info-card mat-elevation-z8" flex="80" style="width: 800px">
+    <mat-card-title></mat-card-title>
+    <mat-card-subtitle> </mat-card-subtitle>
+
+    <mat-card-content
+      style="display: flex; flex-direction: column; justify-content: center"
+    >
+      <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+        <div style="display: flex; align-items: center">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="firstName"
+              placeholder="First Name"
+            />
+            <mat-error *ngIf="clientForm.controls.firstName.errors?.required">
+              Please, enter the First Name
+            </mat-error>
+            <mat-error
+              *ngIf="clientForm.controls.firstName.hasError('minlength')"
+            >
+              First Name must be
+              {{
+                clientForm.controls.firstName.errors?.minlength.requiredLength
+              }}
+              or more characters. Actual:
+              {{ clientForm.controls.firstName.errors?.minlength.actualLength }}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="lastName"
+              placeholder="Last Name"
+            />
+          </mat-form-field>
+        </div>
+
+        <div style="display: flex; align-items: center">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="birth"
+              [matDatepicker]="dtbirth"
+              placeholder="Date of Birth"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="dtbirth"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #dtbirth></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Enter your email"
+              type="email"
+            />
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="age"
+              placeholder="Age"
+              type="number"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <h4>Address:</h4>
+        </div>
+        <div style="display: flex; align-items: center">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="street"
+              placeholder="Street"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="city"
+              placeholder="City"
+            />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select placeholder="State" formControlName="state">
+              <mat-option
+                *ngFor="let s of ['SP', 'PR', 'SC', 'RS', 'PA', 'RO']"
+                [value]="s"
+              >
+                {{ s }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <h4>Telephones:</h4>
+        </div>
+
+        <div style="display: flex; align-items: center">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="phone1"
+              placeholder="Telephone 1 "
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="phone2"
+              placeholder="Telephone 2"
+            />
+          </mat-form-field>
+        </div>
+
+        <button
+          mat-button
+          color="primary"
+          type="submit"
+          [disabled]="!clientForm.valid"
+        >
+          <mat-icon>done</mat-icon>Submit
+        </button>
+      </form>
+    </mat-card-content>
+    <mat-card-footer> </mat-card-footer>
+  </mat-card>
+</div>

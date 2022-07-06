@@ -1,0 +1,130 @@
+<div style="display: flex; flex-direction: column; align-items: center">
+  <mat-card class="mat-elevation-z8" style="width: 800px">
+    <mat-card-title>New Client</mat-card-title>
+    <mat-card-subtitle> </mat-card-subtitle>
+
+    <mat-card-content>
+      <form
+        style="display: flex; flex-direction: column"
+        [formGroup]="clientForm"
+        (ngSubmit)="submit()"
+      >
+        <div style="display: flex">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="First Name"
+              formControlName="firstName"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="Last Name"
+              formControlName="lastName"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <h4>Address:</h4>
+        </div>
+        <div style="display: flex" formGroupName="address">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="Street"
+              formControlName="street"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="City"
+              formControlName="city"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              placeholder="State"
+              formControlName="state"
+            />
+          </mat-form-field>
+        </div>
+
+        <div>
+          <h4>Telephones:</h4>
+        </div>
+
+        <div
+          style="display: flex; justify-content: center; flex-wrap: wrap"
+          formArrayName="phones"
+        >
+          <mat-form-field
+            style="width: 250px"
+            *ngFor="let c of phones?.controls; let i = index"
+          >
+            <input
+              matInput
+              type="text"
+              placeholder="Telephone"
+              [formControlName]="i"
+            />
+          </mat-form-field>
+          <button mat-button type="button" color="primary" (click)="addPhone()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <div style="display: flex">
+          <h4>Children:</h4>
+
+          <button mat-button type="button" color="primary" (click)="addChild()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+          formArrayName="children"
+        >
+          <ng-container *ngFor="let c of children.controls; let i = index">
+            <div [formGroupName]="i">
+              <mat-form-field>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Name"
+                  formControlName="name"
+                />
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Age"
+                  formControlName="age"
+                />
+              </mat-form-field>
+            </div>
+          </ng-container>
+        </div>
+
+        <button mat-button color="primary" type="submit">
+          <mat-icon>done</mat-icon>Submit
+        </button>
+      </form>
+    </mat-card-content>
+    <mat-card-footer> </mat-card-footer>
+  </mat-card>
+</div>

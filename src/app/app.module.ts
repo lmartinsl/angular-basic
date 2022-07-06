@@ -78,6 +78,9 @@ import { FormNativeValidationComponent } from './forms/form-native-validation/fo
 import { FormValidationComponent } from './forms/form-validation/form-validation.component';
 import { FormControlComponent } from './forms/form-control/form-control.component';
 import { FormGroupComponent } from './forms/form-group/form-group.component';
+import { FormBuilderComponent } from './forms/form-builder/form-builder.component';
+import { FormArrayComponent } from './forms/form-array/form-array.component';
+import { ReactiveFormValidationComponent } from './forms/reactive-form-validation/reactive-form-validation.component';
 
 const materialsModules = [
   MatCardModule,
@@ -156,6 +159,9 @@ const materialsModules = [
     FormValidationComponent,
     FormControlComponent,
     FormGroupComponent,
+    FormBuilderComponent,
+    FormArrayComponent,
+    ReactiveFormValidationComponent,
   ],
   imports: [
     BrowserModule,
